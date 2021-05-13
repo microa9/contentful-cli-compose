@@ -23,7 +23,7 @@ RUN npm install \
         --spaceId=${CONTENTFUL_SPACE_ID} \
         --accessToken=${CONTENTFUL_ACCESS_TOKEN}
 
-ARG CONTENTFUL_DEVELOP_PORT
+ARG CONTENTFUL_DEVELOP_PORT=3000
 ENV CONTENTFUL_DEVELOP_PORT ${CONTENTFUL_DEVELOP_PORT}
 
-CMD ["npm", "run", "dev", "--", "-H", "0.0.0.0"]
+CMD ["npm", "run", "dev", "--", "-H", "0.0.0.0", "-p", "${CONTENTFUL_DEVELOP_PORT}"]
