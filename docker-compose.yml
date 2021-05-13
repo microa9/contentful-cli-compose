@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+
+  contentful:
+    build:
+      context: ./contentful
+      args:
+        - CONTENTFUL_MANAGEMENT_TOKEN=${CONTENTFUL_MANAGEMENT_TOKEN}
+        - CONTENTFUL_SPACE_ID=${CONTENTFUL_SPACE_ID}
+        - CONTENTFUL_ACCESS_TOKEN=${CONTENTFUL_ACCESS_TOKEN}
+    ports:
+      - 8000:8000
+    tty: true
